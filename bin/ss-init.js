@@ -6,7 +6,7 @@ const program = require('commander')
 const glob = require('glob')
 
 const copyTemplate = require('../lib/copyTemplate'),
-    type = ['react', 'vue']
+    type = ['react', 'express']
 
 program.parse(process.argv)
 
