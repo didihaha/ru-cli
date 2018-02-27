@@ -9,10 +9,8 @@ class App extends Component {
     render () {
         return [
             <Header key='header' />,
-            <Switch key='content'>
-                <Route path='/content' component={ Content } />
-                <Redirect from='/' to='/content' push={ false } />
-            </Switch>,
+            <Route key='rootPath' exact path='/' render={ () => <Redirect from='/' to='/content' push={ false } /> } />,
+            <Route key='content' path='/content' component={ Content } />,
             <Footer key='footer' />
         ]
     }
