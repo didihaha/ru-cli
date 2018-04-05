@@ -1,14 +1,15 @@
 {
-  "name": "ss-cli",
-  "version": "1.0.0",
-  "description": "",
-  "author": "mantis li",
-  "license": "ISC",
-  "bin": {
-    "ss-cli": "./bin/ss.js"
-  },
-  "dependencies": {
-    "commander": "^2.12.2",
-    "glob": "^7.1.2"
-  }
+	"name": "ss-cli",
+	"version": "1.0.0",
+	"description": "",
+	"author": "mantis li",
+	"license": "ISC",
+	"bin": {
+		"ss-cli": "./bin/ss.js",
+		"ss-init": "./bin/ss-init.js"
+	},
+	"dependencies": {
+		"commander": "^2.12.2",
+		"glob": "^7.1.2"
+	}
 }
