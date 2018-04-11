@@ -1,5 +1,9 @@
 {
   "version": "1.0.0",
+  "name": "<%=projectName%>",
+  "author": "<%=author%>",
+  "description": "<%=description%>",
+  "startTime": "<%=startTime%>",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --inline --progress --config ./webpack/webpack.dev.config.js"
@@ -9,8 +13,8 @@
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "immutable": "^3.8.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",

@@ -5,8 +5,7 @@
 	"author": "mantis li",
 	"license": "ISC",
 	"bin": {
-		"ss-cli": "./bin/ss.js",
-		"ss-init": "./bin/ss-init.js"
+		"ss-cli": "./bin/ss.js"
 	},
 	"dependencies": {
 		"commander": "^2.12.2",

@@ -1,2 +1,2 @@
 # reactAuto
-基于react16版本的开发框架
+基于react16版本的项目结构
