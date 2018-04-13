@@ -9,6 +9,8 @@
 	},
 	"dependencies": {
 		"commander": "^2.12.2",
-		"glob": "^7.1.2"
+		"ejs": "^2.5.8",
+		"glob": "^7.1.2",
+		"inquirer": "^5.2.0"
 	}
 }

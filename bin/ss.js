@@ -26,10 +26,11 @@ requirer.prompt([
         type: 'input',
         name: 'author',
         message: 'who is the author for this project?',
-        default: ''
+        default: 'mwbyd'
     }
 ]).then(locals => {
-    locals.projectName = program.args.shift()
+    const projectName = program.args.shift()
+    locals.projectName = projectName
     locals.startTime = (new Date()).toLocaleDateString() + ' ' +  (new Date()).toLocaleTimeString()
 
     // 选取的框架
