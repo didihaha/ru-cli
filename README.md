@@ -3,4 +3,4 @@
 *   projectName：项目名称（必传，由用户自行输入）
 
 命令
-    ss-init -r projectName
+    ss-cli -r projectName
