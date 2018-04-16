@@ -1,6 +1,5 @@
 const merge = require('webpack-merge'),
 	webpack = require('webpack'),
-	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	base = require('./webpack.base'),
 	devConfig = require('../config/dev')
 
@@ -27,11 +26,6 @@ const dev = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NamedModulesPlugin(),
-		new HtmlWebpackPlugin({
-			filename: 'index.html',
-			template: 'index.html',
-			inject: true
-		}),
 		new webpack.DefinePlugin({ ...devConfig })
 	]
 }

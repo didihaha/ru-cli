@@ -1,5 +1,6 @@
 const webpack = require('webpack'),
-	HappyPack = require('happypack')
+	HappyPack = require('happypack'),
+	HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	entry: {
@@ -54,6 +55,11 @@ module.exports = {
         }
     },
 	plugins: [
+		new HtmlWebpackPlugin({
+			filename: 'index.html',
+			template: 'index.html',
+			inject: true
+		}),
 		new HappyPack({
             id: 'babel',
             threads: 4,
