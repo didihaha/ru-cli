@@ -12,7 +12,7 @@ const prod = {
     mode: 'production',
     output: {
 		path: outputPath,
-		filename: 'js/[name]-[hash].js'
+		filename: 'js/[name]-[contenthash:8].js'
     },
     module: {
         rules: [
