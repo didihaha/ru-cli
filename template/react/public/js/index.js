@@ -1,6 +1,7 @@
 //入口文件
 
 import '../less/index.less'
+import 'regenerator-runtime/runtime'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
