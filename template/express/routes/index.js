@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const init = function (app) {
+    app.get('/favicon.ico', (req, res, next) => {res.end('ignore favicon')});
+    app.use('/', require('./default'));
+};
 
-module.exports = router;
+exports.init = init;
