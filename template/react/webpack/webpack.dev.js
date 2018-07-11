@@ -1,6 +1,7 @@
 const merge = require('webpack-merge'),
 	webpack = require('webpack'),
 	base = require('./webpack.base'),
+	HappyPack = require('happypack'),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const dev = {

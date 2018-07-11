@@ -1,6 +1,7 @@
 const merge = require('webpack-merge'),
     webpack = require('webpack'),
     path = require('path'),
+    HappyPack = require('happypack'),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin'),
@@ -27,6 +28,9 @@ const prod = {
                     name: 'common'
                 }
             }
+        },
+        runtimeChunk: { 
+            name: 'runtime'
         }
     },
     plugins: [
