@@ -14,15 +14,15 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
+				test: /\.js$/,
                 use: 'happypack/loader?id=babel',
 				exclude: /node_modules/
 			},
-			// {
-			// 	test: /\.css$/,
-			// 	use: 'happypack/loader?id=css',
-            //  exclude: /node_modules/
-			// },
+			{
+				test: /\.css$/,
+				use: 'happypack/loader?id=css',
+            	exclude: /node_modules/
+			},
 			{
 				test: /\.less$/,
 				use: 'happypack/loader?id=less',
@@ -40,20 +40,6 @@ module.exports = {
 			}
 		]
 	},
-	optimization: {
-        splitChunks: {
-            cacheGroups: {
-				// 提出公共js文件
-                commons: {
-                    chunks: 'initial',
-                    minChunks: 2,
-                    maxInitialRequests: 5,
-                    minSize: 2,
-                    name: 'common'
-                }
-            }
-        }
-    },
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
@@ -64,17 +50,6 @@ module.exports = {
             id: 'babel',
             threads: 4,
             loaders: ['babel-loader']
-		}),
-		// new HappyPack({
-		// 	id: 'css',
-        //     threads: 2,
-		// 	loaders: ['style-loader', 'css-loader', 'postcss-loader']
-		// }),
-		new HappyPack({
-			id: 'less',
-            threads: 2,
-			loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
-		}),
-		new webpack.optimize.ModuleConcatenationPlugin(),
+		})
 	]
 };
