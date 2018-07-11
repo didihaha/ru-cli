@@ -1,6 +1,7 @@
 const merge = require('webpack-merge'),
 	webpack = require('webpack'),
-	base = require('./webpack.base')
+	base = require('./webpack.base'),
+	MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const dev = {
 	mode: 'development',
@@ -37,6 +38,10 @@ const dev = {
             threads: 2,
 			loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
 		}),
+		new MiniCssExtractPlugin({
+			filename: '[name].css',
+            chunkFilename: '[id].css'
+        }),
 	]
 }
 
