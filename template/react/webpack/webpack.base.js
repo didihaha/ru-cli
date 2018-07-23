@@ -1,4 +1,5 @@
 const HappyPack = require('happypack'),
+	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 	productionMode = process.env.NODE_ENV !== 'production',
 	HtmlWebpackPlugin = require('html-webpack-plugin')
 
