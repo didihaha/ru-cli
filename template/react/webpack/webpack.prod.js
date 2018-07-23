@@ -1,7 +1,6 @@
 const merge = require('webpack-merge'),
     webpack = require('webpack'),
     path = require('path'),
-    HappyPack = require('happypack'),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin'),
@@ -39,19 +38,9 @@ const prod = {
 			manifest: require(path.join(__dirname, '../dll', 'manifest.json')),
         }),
 		new MiniCssExtractPlugin({
-			filename: '[name].[hash].css',
-            chunkFilename: '[id].[hash].css'
+			filename: 'css/[name].[contenthash:6].css',
+            chunkFilename: 'css/[id].[contenthash:6].css'
         }),
-		new HappyPack({
-			id: 'css',
-            threads: 2,
-			loaders: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
-		}),
-		new HappyPack({
-			id: 'less',
-            threads: 2,
-			loaders: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader']
-		}),
         new WebpackParallelUglifyPlugin(
             {
                 uglifyJS: {

@@ -1,14 +1,13 @@
-const webpack = require('webpack'),
-	HappyPack = require('happypack'),
+const HappyPack = require('happypack'),
+	productionMode = process.env.NODE_ENV !== 'production',
 	HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	entry: {
-		vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk', 'immutable'],
+		vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk'],
 		main: './public/js/index.js'
 	},
 	resolve: {
-		// 请不要使用jsx尾缀
 		extensions: ['.js', '.json']
 	},
 	module: {
@@ -20,12 +19,26 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				use: 'happypack/loader?id=css',
+				use: [
+					productionMode ? {
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '/'
+						}
+					} : 'style-loader',
+					'css-loader', 'postcss-loader'],
             	exclude: /node_modules/
 			},
 			{
 				test: /\.less$/,
-				use: 'happypack/loader?id=less',
+				use: [
+					productionMode ? {
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '/'
+						}
+					} : 'style-loader',
+					'css-loader', 'postcss-loader', 'less-loader'],
                 exclude: /node_modules/
 			},
 			{

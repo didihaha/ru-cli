@@ -1,7 +1,6 @@
 const merge = require('webpack-merge'),
 	webpack = require('webpack'),
-	base = require('./webpack.base'),
-	HappyPack = require('happypack')
+	base = require('./webpack.base')
 
 const dev = {
 	mode: 'development',
@@ -27,17 +26,7 @@ const dev = {
 		namedModules: true
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new HappyPack({
-			id: 'css',
-            threads: 2,
-			loaders: ['style-loader', 'css-loader', 'postcss-loader']
-		}),
-		new HappyPack({
-			id: 'less',
-            threads: 2,
-			loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
-		})
+		new webpack.HotModuleReplacementPlugin()
 	]
 }
 

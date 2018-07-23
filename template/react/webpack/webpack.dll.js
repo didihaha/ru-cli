@@ -4,7 +4,7 @@ const webpack = require('webpack'),
 module.exports = {
     mode: 'production',
     entry: {
-        vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk', 'immutable']
+        vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk']
     },
     output: {
         path: path.join(__dirname, '../dll'),
