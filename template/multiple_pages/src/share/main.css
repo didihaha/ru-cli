@@ -1,0 +1,382 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dt,dd,figure,menu,input,fieldset,textarea,button,select,th,td,div,span,header,nav,footer{margin:0;padding:0;-webkit-text-size-adjust:none;}
+h1,h2,h3,h4,h5,h6,b,strong{font-size:100%;font-weight:normal;}
+li{list-style:none;}
+em,i{font-style:normal;}
+a,a:visited{
+  text-decoration: none;
+  border: none;
+  color: #333;
+  display: block;
+  -webkit-tap-highlight-color: 	rgba(238, 238, 238, .5);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
+a.vip {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
+fieldset,img,input{border:none;}
+.none {
+  display: none !important;
+}
+
+html {
+  font-family:
+    /* 西文 */
+    "-apple-system", "Helvetica",
+    "BlinkMacSystemFont", "Segoe UI",
+    "Roboto", "Ubuntu",
+    "Helvetica Neue" , "Arial",
+    /* 中文 */
+    "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN",
+    "sans-serif";
+  font-size: calc(100vw / 3.75);
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+body {
+  background: #fff;
+  padding-top: 0.01rem;
+}
+
+.guide {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.guide img {
+  display: block;
+  width: 100%;
+}
+
+header {
+  border-bottom: 1px solid #F5F5F5 ;
+  padding-top: 0.11rem;
+  height: 0.53rem;
+  position: fixed;
+  background: #ffffff;
+  margin-top: -0.01rem;
+  width: 100%;
+  z-index: 99;
+}
+
+header > div#icon {
+  display: block;
+  float: left;
+  height: 0.42rem;
+  width: 0.42rem;
+  background: url('./images/icon.png') no-repeat center center;
+  background-size: 100% 100%;
+  margin-left: 0.24rem;
+}
+
+header > div.headerText {
+  height: 0.42rem;
+  display: block;
+  margin-left: 0.16rem;
+  float: left;
+}
+
+p{
+  color: #98817B;
+  font-size: 0.14rem;
+  line-height: 0.2rem;
+}
+.headerText > .title {
+  font-size: 0.16rem;
+  font-family: PingFangSC-Medium;
+}
+
+.headerText > .slogen {
+  font-size: 0.12rem;
+  color: #999999;
+  font-family: PingFangSC-Regular;
+}
+
+button {
+  background-color: #FFE045;
+  text-align: center;
+  color: #6F4C46;
+}
+button#downloadBtnSmall {
+  height: 0.36rem;
+  width: 0.72rem;
+  line-height: 0.36rem;
+  border-radius: 0.18rem;
+  display: block;
+  float: right;
+  margin: 0.05rem 0.24rem;
+  font-family: PingFangSC-Regular;
+  font-size: 0.12rem;
+  border: none;
+}
+
+article {
+  text-align: center;
+  width: 100%;
+  margin-top: 0.77rem;
+}
+
+article > div#cover {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  margin: auto;
+  border-radius: 0.08rem;
+  overflow: hidden;
+}
+
+#cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#cover .labels_vip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 0.32rem;
+  height: 0.19rem;
+  text-indent: -99em;
+  background: url('./images/labels_vip.png') no-repeat center center;
+  background-size: 100% 100%;
+}
+
+article h6.title {
+  color: #6F4C46;
+  font-size: 0.24rem;
+  margin-top: 0.12rem;
+}
+
+article p {
+  margin-top: 0.06rem;
+}
+
+
+
+button#openBtnLarge {
+  border: 0 none;
+  height: 0.45rem;
+  width: 3.29rem;
+  line-height: 0.45rem;
+  margin: 0.24rem auto 0;
+  border-radius: 0.22rem;
+  display: block;
+  font-size: 0.14rem;
+}
+
+div.intro {
+  width: 3.27rem;
+  display: block;
+  margin: 0.23rem auto;
+  position: relative;
+  color: #98817B;
+  font-size: 0.14rem;
+  line-height: 0.2rem;
+}
+
+div.intro .intro_text {
+  font-size: 0.14rem;
+}
+
+span#more{
+  color: #FFE045;
+  font-size: 0.12rem;
+  position: absolute;
+  bottom: 0.01rem;
+  right: 0rem;
+  height: 0.17rem;
+  line-height: 0.17rem;
+}
+span#more img{
+  display:block;
+  float: right;
+  height: 90%;
+  margin-top: 1px;
+}
+
+
+main{
+  overflow: hidden;
+  padding-left: 0.15rem;
+}
+main > p {
+  display: block;
+  height: 0.48rem;
+  width: 100%;
+  line-height: 0.48rem;
+  font-size: 0.14rem;
+  color: #C5AEA7;
+  border-top: 1px #F5F5F5 solid;
+  padding-left: 0.09rem;
+}
+
+main li.media {
+  width: 100%;
+  height: 0.72rem;
+  border-bottom: 1px solid #F5F5F5;
+  padding-top: 0.01rem;
+}
+li.media a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.01rem;
+  float: left;
+}
+li.media button {
+  width: 6.4%;
+  height: 33.33%;
+  display: block;
+  float: left;
+  margin: 0.24rem 0.15rem 0 0.09rem;
+  background-size: 100% 100%;
+  border: none;
+}
+
+.mediaInfo {
+  margin-top: 0.14rem;
+  width: 83.2%;
+  margin-left: 0.48rem;
+}
+
+.mediaTitle{
+  color: #6F4C46;
+  font-size: 0.14rem;
+  font-family: PingFangSC-Regular;
+  letter-spacing: 0.1px;
+  margin-bottom: 0.05rem;
+  height: 0.2rem;
+}
+
+.mediaTitle>span {
+  float: left;
+  width: 100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.mediaLabel{
+   width: 0.32rem;
+   height: 0.18rem;
+   background: url('./images/audition.png') no-repeat center;
+   background-size: 100% 100%;
+   display: block;
+   float: left;
+}
+
+.mediaLabel_vip {
+  width: 0.32rem;
+  height: 0.18rem;
+  background: url('./images/vip.png') no-repeat center;
+  background-size: 100% 100%;
+  display: block;
+  float: left;
+}
+
+.mediaTime {
+  float: left;
+  height: 0.18rem;
+  padding-top: 0.01rem;
+  margin-left: 0.07rem;
+}
+
+.mediaTime .time_img {
+  display: block;
+  float: left;
+  width: 0.16rem;
+  height: 0.16rem;
+  margin: 0.01;
+  background: url('./images/time.png');
+  background-size: 0.16rem 0.16rem;
+}
+
+.mediaTime p{
+  display: block;
+  float: left;
+  font-size: 0.12rem;
+  color:#C5AEA7;
+  line-height: 0.15rem;
+  margin-left: 0.05rem;
+}
+
+.popUpContainer{
+  text-align: center;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top:0rem;
+  left: 0rem;
+}
+
+.popUp{
+  width: 3rem;
+  height: 1.92rem;
+  background: #ffffff;
+  margin: 2.13rem auto;
+  border-radius: 0.05rem;
+  padding-top: 0.01rem;
+  font-family: PingFangSC-Regular;
+  position: relative;
+  overflow: hidden;
+}
+
+.popUp h6 {
+  font-size: 0.2rem;
+  color: #6F4C46;
+  margin-top: 0.35rem;
+}
+
+.popUp p{
+  color: #98817B;
+  font-size: 0.16rem;
+  margin-top: 0.12rem;
+}
+.popUp button {
+  width: 50%;
+  position: absolute;
+  bottom: 0px;
+  height: 0.54rem;
+  line-height: 0.53rem;
+  font-size: 0.18rem;
+  color: #6F4C46;
+  border-top: 1px #F5F5F5 solid;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}
+.popCancel{
+  left: 0rem;
+  background: #ffffff;
+  border-radius: 0 0 0 0.05rem;
+}
+
+.play {
+  background: url('./images/play.png') center no-repeat;
+}
+
+.pause {
+  background: url('./images/pause.png') center no-repeat;
+}
+
+.loading img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}

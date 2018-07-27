@@ -15,7 +15,7 @@ const dev = {
 	devServer: {
 		historyApiFallback: true,
 		contentBase: path.join(__dirname, './dist'),
-		host: 'localhost',
+		host: '192.168.152.163',
 		port: 8000,
 		hot: true,
 		open: true,
@@ -23,6 +23,20 @@ const dev = {
 		compress: true,
 		progress: true,
 		// watchContentBase: true
+	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader', 'postcss-loader'],
+            	exclude: /node_modules/
+			},
+			{
+				test: /\.less$/,
+				use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+                exclude: /node_modules/
+			}
+		]
 	},
 	optimization: {
 		namedModules: true

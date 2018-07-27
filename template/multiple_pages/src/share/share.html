@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div>哈哈哈</div>
+    <div id="guide" class="guide none">
+        <img src="./image/guide.png" alt="请点击右上角的分享按钮，在浏览器中打开以打开app">
+    </div>
+    <header>
+        <div id="icon"></div>
+        <div class="headerText">
+            <h6 class="title">小喜马</h6>
+            <p class="slogen">丰富孩子的成长之路</p>
+        </div>
+        <button id="downloadBtnSmall">
+            下载APP
+        </button>
+    </header>
+    <article>
+        <div id="cover"></div>
+        <div class="content" id='head_content'>
+            <h6 class="title">&nbsp;</h6>
+            <p class="simpleIntro">&nbsp;</p>
+            <p class="follow"><span id="number">0</span>人已订阅</p>
+        </div>
+    </article>
+    <button id="openBtnLarge">打开小喜马App，畅听所有内容更自由</button>
+    <div class="intro">
+        <div id='intro_text' class="intro_text"></div>
+        <span id="more">详情介绍<img src="./image/other.png" alt=""></span>
+    </div>
+
+    <main>
+        <p>共<span id="lessonNum">&nbsp;</span>节</p>
+        <ul id="media_container">
+
+        </ul>
+    </main>
+    <div id='popUpContainer' class="popUpContainer none">
+        <section id="popUp" class="popUp">
+            <h6>付费内容</h6>
+            <p>付费内容只能在小喜马内畅听哦！</p>
+            <button id="popCancel" class="popCancel">取消</button>
+            <button id="popOpenBtn">去小喜马</button>
+        </section>
+    </div>
+    <div id="loading" class="loading none"><img src="./image/loading.gif" alt="正在加载中"></div>
+
 </body>
 </html>
