@@ -33,6 +33,20 @@ const prod = {
             name: 'runtime'
         }
     },
+    module: {
+		rules: [
+			{
+				test: /\.(css|less)$/,
+				use: [{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '/'
+						}
+					}, 'css-loader', 'postcss-loader', 'less-loader'],
+                exclude: /node_modules/
+			}
+		]
+	},
     plugins: [
         new CleanWebpackPlugin(
             // 需要删除的文件夹
@@ -42,8 +56,13 @@ const prod = {
             }
         ),
 		new MiniCssExtractPlugin({
+<<<<<<< HEAD
 			filename: '[name].[hash].css',
             chunkFilename: 'css/[name].[contenthash:6].css'
+=======
+			filename: '[name].[contenthash:6].css',
+            chunkFilename: 'css/[id].[contenthash:6].css'
+>>>>>>> 78944498ddd4094835a367cc4814ed2ff9ced422
         }),
         new WebpackParallelUglifyPlugin(
             {

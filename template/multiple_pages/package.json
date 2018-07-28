@@ -10,6 +10,9 @@
     "build:prod": "webpack --config ./webpack/webpack.prod.js"
   },
   "license": "ISC",
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",

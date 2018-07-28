@@ -13,6 +13,20 @@ const prod = {
 		path: outputPath,
 		filename: 'js/[name]-[contenthash:8].js'
     },
+    module: {
+		rules: [
+			{
+				test: /\.(css|less)$/,
+				use: [{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '/'
+						}
+					}, 'css-loader', 'postcss-loader', 'less-loader'],
+                exclude: /node_modules/
+			}
+		]
+	},
 	optimization: {
         noEmitOnErrors: true,
         concatenateModules: true,

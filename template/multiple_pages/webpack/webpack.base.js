@@ -31,15 +31,13 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|gif|ttf|eot|woff(2)?)(\?[=a-z0-9]+)?$/i,
-				use: [{
-					loader: 'url-loader',
-					options: {
-						limit: 10000, // 10KB
-						name: '[name].[ext]',
-						publicPath: '/images/',
-						outputPath: '/images'
-					}
-				}]
+				loader: 'url-loader',
+				options: {
+					limit: 10000, // 10KB
+					name: '[name]_[hash:7].[ext]',
+					publicPath: '/dist/',
+					outputPath: 'images/'
+				}
 			}
 		]
 	},
