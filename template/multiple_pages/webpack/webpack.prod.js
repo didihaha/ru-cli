@@ -20,9 +20,23 @@ const prod = {
             name: 'runtime'
         }
     },
+    module: {
+		rules: [
+			{
+				test: /\.(css|less)$/,
+				use: [{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '/'
+						}
+					}, 'css-loader', 'postcss-loader', 'less-loader'],
+                exclude: /node_modules/
+			}
+		]
+	},
     plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].[contenthash:6].css',
+			filename: '[name].[contenthash:6].css',
             chunkFilename: 'css/[id].[contenthash:6].css'
         }),
         new WebpackParallelUglifyPlugin(

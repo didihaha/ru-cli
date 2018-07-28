@@ -11,6 +11,15 @@ const dev = {
 		chunkFilename: '[name].chunk.js',
 		sourceMapFilename: '[file].map'
 	},
+	module: {
+		rules: [
+			{
+				test: /\.(css|less)$/,
+				use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+                exclude: /node_modules/
+			}
+		]
+	},
 	devServer: {
 		historyApiFallback: true,
 		host: 'localhost',

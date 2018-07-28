@@ -32,37 +32,13 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.css$/,
-				use: [
-					productionMode ? {
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '/'
-						}
-					} : 'style-loader',
-					'css-loader', 'postcss-loader'],
-            	exclude: /node_modules/
-			},
-			{
-				test: /\.less$/,
-				use: [
-					productionMode ? {
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '/'
-						}
-					} : 'style-loader',
-					'css-loader', 'postcss-loader', 'less-loader'],
-                exclude: /node_modules/
-			},
-			{
 				test: /\.(png|jpg|gif|ttf|eot|woff(2)?)(\?[=a-z0-9]+)?$/i,
 				loader: 'url-loader',
 				options: {
-					// limit: 10000, // 10KB
-					// name: '[path][name]_[hash:7].[ext]',
-					// publicPath: '/dist/',
-					// outputPath: 'images/'
+					limit: 10000, // 10KB
+					name: '[name]_[hash:7].[ext]',
+					publicPath: '/dist/',
+					outputPath: 'images/'
 				}
 			}
 		]
