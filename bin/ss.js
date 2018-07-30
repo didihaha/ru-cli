@@ -36,14 +36,11 @@ requirer.prompt([
 
     // 选取的框架
     let templateName
-    const { react: hasReact, express: hasExpress } = program
-    if (hasReact && hasExpress) {
-        throw new Error('react和express参数不可同时使用')
-    } else {
-        templateName = hasReact || hasExpress
-    }
-    if (!templateName) {
-        throw new Error('请输入参数[-r | -e | react | express]选取框架模版')
+    const inputParams = Object.keys(program)
+    if (inputParams.length > 1) {
+        throw new Error('项目分类参数不可同时使用，为单选')
+    } else if (inputParams.length === 0) {
+        throw new Error('项目分类参数必填, 请输入参数[-r | -e | react | express]选取框架模版')
     }
 
     // 验证项目名的可用性
