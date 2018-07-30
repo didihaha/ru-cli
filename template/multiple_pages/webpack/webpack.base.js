@@ -9,10 +9,10 @@ const htmlPlugins = [],
 	entries = {}
 
 dirArr.forEach(item => {
-	entries[item] = `./src/${ item }/main.js`
+	entries[item] = `./src/${ item }/js/main.js`
 	htmlPlugins.push( new HtmlWebpackPlugin({
 		filename: `${item}.html`,
-		template: path.resolve(sourcePath, `${ item }/${ item }.html`),
+		template: path.resolve(sourcePath, `${ item }/index.html`),
 		chunks: [item, 'commons']
 	}) )
 })
@@ -42,12 +42,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		// ...htmlPlugins,
-		new HtmlWebpackPlugin({
-			filename: `share.html`,
-			template: path.resolve(sourcePath, `share/share.html`),
-			inject: true
-		}),
+		...htmlPlugins,
 		new HappyPack({
             id: 'babel',
             threads: 4,
