@@ -6,7 +6,7 @@ const fs = require('fs'),
     glob = require('glob'),
     requirer = require('inquirer'),
     copyTemplate = require('../lib/copyTemplate'),
-    type = ['react', 'express']
+    type = ['react', 'express', 'multiple_pages']
 
 program.version('1.0.0')
     .usage('[options] [dir]')
@@ -27,7 +27,7 @@ requirer.prompt([
         type: 'input',
         name: 'author',
         message: 'who is the author for this project?',
-        default: 'mwbyd'
+        default: 'mantis li'
     }
 ]).then(locals => {
     const projectName = program.args.shift()
@@ -36,11 +36,15 @@ requirer.prompt([
 
     // 选取的框架
     let templateName
-    const inputParams = Object.keys(program)
+    const { react, express, multiple_pages } = program,
+        inputParams = [react, express, multiple_pages].filter(item => !!item)
+
     if (inputParams.length > 1) {
-        throw new Error('项目分类参数不可同时使用，为单选')
+        throw new Error('选取的项目模板参数不可多选')
     } else if (inputParams.length === 0) {
         throw new Error('项目分类参数必填, 请输入参数[-r | -e | react | express]选取框架模版')
+    } else {
+        templateName = inputParams[0]
     }
 
     // 验证项目名的可用性
