@@ -24,7 +24,7 @@ const dev = {
 	devServer: {
 		historyApiFallback: true,
 		contentBase: path.join(__dirname, './dist'),
-		host: '192.168.152.163',
+		host: 'localhost',
 		port: 8000,
 		hot: true,
 		open: true,
