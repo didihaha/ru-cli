@@ -22,9 +22,8 @@ module.exports = {
 				loader: 'url-loader',
 				options: {
 					limit: 10000, // 10KB
-					name: '[name]_[hash:7].[ext]',
-					publicPath: '/release/',
-					outputPath: 'images/'
+					name: 'images/[name]_[hash:7].[ext]',
+					publicPath: '/',
 				}
 			}
 		]

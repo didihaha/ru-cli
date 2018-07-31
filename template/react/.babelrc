@@ -2,12 +2,6 @@
   "presets": ["react", "env"],
   "plugins": [
     "react-hot-loader/babel",
-    ["transform-runtime", {
-        "helpers": false,
-        "polyfill": true,
-        "regenerator": true,
-        "moduleName": "babel-runtime"
-    }],
     "transform-object-rest-spread",
     "transform-decorators-legacy",
     "syntax-dynamic-import",

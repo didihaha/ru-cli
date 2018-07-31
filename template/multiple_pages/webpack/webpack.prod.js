@@ -28,10 +28,7 @@ const prod = {
 	},
 	optimization: {
         noEmitOnErrors: true,
-        concatenateModules: true,
-        runtimeChunk: { 
-            name: 'runtime'
-        }
+        concatenateModules: true
     },
     plugins: [
         new CleanWebpackPlugin(
@@ -42,7 +39,7 @@ const prod = {
             }
         ),
 		new MiniCssExtractPlugin({
-			filename: '[name].[contenthash:6].css',
+			filename: 'css/[name].[contenthash:6].css',
             chunkFilename: 'css/[id].[contenthash:6].css'
         }),
         new WebpackParallelUglifyPlugin(
