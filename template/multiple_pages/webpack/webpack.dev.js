@@ -27,25 +27,11 @@ const dev = {
 		host: 'localhost',
 		port: 8000,
 		hot: true,
-		open: true,
+		open: true, 
 		inline: true,
 		compress: true,
 		progress: true,
 		// watchContentBase: true
-	},
-	module: {
-		rules: [
-			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader', 'postcss-loader'],
-            	exclude: /node_modules/
-			},
-			{
-				test: /\.less$/,
-				use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
-                exclude: /node_modules/
-			}
-		]
 	},
 	optimization: {
 		namedModules: true
