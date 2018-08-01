@@ -35,7 +35,7 @@ module.exports = {
 				options: {
 					limit: 10000, // 10KB
 					name: 'images/[name]_[hash:7].[ext]',
-					publicPath: '/',
+					publicPath: '../',
 				}
 			}
 		]
