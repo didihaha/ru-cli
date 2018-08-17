@@ -19,7 +19,7 @@ const pre = {
 				use: [{
 						loader: MiniCssExtractPlugin.loader,
 						options: {
-							publicPath: '/'
+							publicPath: '../'
 						}
 					}, 'css-loader', 'postcss-loader', 'less-loader'],
                 exclude: /node_modules/
