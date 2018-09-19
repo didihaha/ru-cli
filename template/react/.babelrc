@@ -1,15 +1,23 @@
 {
-  "presets": ["react", "env"],
-  "plugins": [
-    "react-hot-loader/babel",
-    "transform-object-rest-spread",
-    "transform-decorators-legacy",
-    "syntax-dynamic-import",
-    [
-      "transform-class-properties",
-      {
-        "spec": true
-      }
-    ]
-  ]
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-react"
+	],
+	"plugins": [
+		"react-hot-loader/babel",
+		["@babel/plugin-transform-runtime",{
+			"corejs": 2
+		}],
+		"@babel/plugin-proposal-object-rest-spread",
+		["@babel/plugin-proposal-decorators", {
+			"legacy": true
+		}],
+		"@babel/plugin-syntax-dynamic-import",
+		[
+			"@babel/plugin-proposal-class-properties",
+			{
+				"spec": true
+			}
+		]
+	]
 }
