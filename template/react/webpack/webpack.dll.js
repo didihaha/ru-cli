@@ -4,16 +4,17 @@ const webpack = require('webpack'),
 module.exports = {
     mode: 'production',
     entry: {
-        vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk']
+        polyfill: ['@babel/polyfill'],
+        vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk', 'axios', 'classnames']
     },
     output: {
         path: path.join(__dirname, '../dll'),
-        filename: 'dll.[name].js',
+        filename: 'dll_[name]_[hash:8].js',
         library: '[name]_[hash]'
     },
     plugins: [
         new webpack.DllPlugin({
-            path: path.join(__dirname, '../dll', 'manifest.json'),
+            path: path.join(__dirname, '../dll', '[name]_manifest.json'),
             name: '[name]_[hash]'
         })
     ]

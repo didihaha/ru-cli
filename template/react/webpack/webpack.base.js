@@ -4,7 +4,6 @@ const HappyPack = require('happypack'),
 
 module.exports = {
 	entry: {
-		vendor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'redux-thunk'],
 		main: './public/js/index.js'
 	},
 	resolve: {
