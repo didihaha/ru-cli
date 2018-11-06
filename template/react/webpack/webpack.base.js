@@ -1,5 +1,5 @@
 const HappyPack = require('happypack'),
-	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
+	AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin'),
 	HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -34,6 +34,7 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
+		new AddAssetHtmlPlugin({ filepath: require.resolve('../dll/*.js') }),
 		new HappyPack({
             id: 'babel',
             threads: 4,
