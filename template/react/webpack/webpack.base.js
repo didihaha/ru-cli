@@ -34,7 +34,10 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
-		new AddAssetHtmlPlugin({ filepath: require.resolve('../dll/*.js') }),
+		new AddAssetHtmlPlugin([
+			{ filepath: require.resolve('../dll/dll_polyfill_2bccd3c6.js') },
+			{ filepath: require.resolve('../dll/dll_vendor_2bccd3c6.js') }
+		]),
 		new HappyPack({
             id: 'babel',
             threads: 4,

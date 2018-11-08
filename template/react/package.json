@@ -7,11 +7,12 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.js",
-    "pre": "webpack --config ./webpack/webpack.dll.js",
+    "dll": "webpack --config ./webpack/webpack.dll.js",
     "build:prod": "webpack --config ./webpack/webpack.prod.js"
   },
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@babel/runtime-corejs2": "^7.0.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
