@@ -48,7 +48,11 @@ const pre = {
     plugins: [
 		new webpack.DllReferencePlugin({
 			context: path.join(__dirname, '../dll/'),
-			manifest: require(path.join(__dirname, '../dll', 'manifest.json')),
+			manifest: require(path.join(__dirname, '../dll', 'polyfill_manifest.json')),
+        }),
+        new webpack.DllReferencePlugin({
+			context: path.join(__dirname, '../dll/'),
+			manifest: require(path.join(__dirname, '../dll', 'vendor_manifest.json')),
         }),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash:6].css',
