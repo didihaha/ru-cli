@@ -1,6 +1,10 @@
+export interface Action {
+    type: string
+}
+
 const login = (state = {
     isLogin: false
-}, action) => {
+}, action: Action) => {
     switch (action.type) {
         case 'LOGIN_SUCCESS':
             return {

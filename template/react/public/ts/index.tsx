@@ -1,8 +1,8 @@
 //入口文件
 
 import '../less/index.less'
-import React from 'react'
-import { render } from 'react-dom'
+import * as React from 'react'
+import * as ReactDom from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import thunkMiddleware from 'redux-thunk'
@@ -14,11 +14,10 @@ let store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 console.log(`当前处于 ${process.env.NODE_ENV} 环境`)
 
-render(
+ReactDom.render(
     <Provider store={store}>
         <Router>
             <App />
         </Router>
     </Provider>,
-    document.getElementById('target')
-)
+    document.getElementById('target'))

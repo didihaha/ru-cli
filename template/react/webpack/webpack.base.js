@@ -1,20 +1,26 @@
 const HappyPack = require('happypack'),
+    path = require('path'),
+    webpack = require('webpack'),
 	AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin'),
-	HtmlWebpackPlugin = require('html-webpack-plugin')
+	HtmlWebpackPlugin = require('html-webpack-plugin'),
+	{ CheckerPlugin } = require('awesome-typescript-loader')
 
 module.exports = {
 	entry: {
-		main: './public/js/index.js'
+		main: './public/ts/index.tsx'
 	},
 	resolve: {
-		extensions: ['.js', '.json']
+		extensions: ['.ts', '.tsx', '.json']
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
-                use: 'happypack/loader?id=babel',
-				exclude: /node_modules/
+				test: /\.tsx?$/,
+                use: [
+					{ loader: 'happypack/loader?id=babel' },
+					{ loader: 'awesome-typescript-loader' }
+				],
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.(png|jpg|gif|ttf|eot|woff(2)?)(\?[=a-z0-9]+)?$/i,
@@ -25,18 +31,28 @@ module.exports = {
 					name: 'images/[name]_[hash:7].[ext]',
 					publicPath: '/',
 				}
-			}
+			},
+			{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
 		]
 	},
 	plugins: [
+		new CheckerPlugin(),
+		new webpack.DllReferencePlugin({
+			context: path.join(__dirname, '../dll/'),
+			manifest: require(path.join(__dirname, '../dll', 'polyfill_manifest.json')),
+        }),
+        new webpack.DllReferencePlugin({
+			context: path.join(__dirname, '../dll/'),
+			manifest: require(path.join(__dirname, '../dll', 'vendor_manifest.json')),
+        }),
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: 'index.html',
 			inject: true
 		}),
 		new AddAssetHtmlPlugin([
-			{ filepath: require.resolve('../dll/dll_polyfill_2bccd3c6.js') },
-			{ filepath: require.resolve('../dll/dll_vendor_2bccd3c6.js') }
+			{ filepath: require.resolve('../dll/dll_polyfill_78aecd68.js') },
+			{ filepath: require.resolve('../dll/dll_vendor_78aecd68.js') }
 		]),
 		new HappyPack({
             id: 'babel',
