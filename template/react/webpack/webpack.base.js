@@ -10,7 +10,7 @@ module.exports = {
 		main: './public/ts/index.tsx'
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.json', 'js']
+		extensions: ['.ts', '.tsx', '.json', '.js']
 	},
 	module: {
 		rules: [
@@ -51,8 +51,8 @@ module.exports = {
 			inject: true
 		}),
 		new AddAssetHtmlPlugin([
-			{ filepath: require.resolve('../dll/dll_polyfill_78aecd68.js') },
-			{ filepath: require.resolve('../dll/dll_vendor_78aecd68.js') }
+			{ filepath: require.resolve('../dll/dll_polyfill_56b2f803.js') },
+			{ filepath: require.resolve('../dll/dll_vendor_56b2f803.js') }
 		]),
 		new HappyPack({
             id: 'babel',
