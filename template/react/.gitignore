@@ -3,3 +3,4 @@ release
 dist
 package-lock.json
 yarn-lock.json
+.DS_Store

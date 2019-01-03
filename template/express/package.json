@@ -1,6 +1,5 @@
 {
   "version": "1.0.0",
-  "name": "<%=projectName%>",
   "author": "<%=author%>",
   "description": "<%=description%>",
   "startTime": "<%=startTime%>",
