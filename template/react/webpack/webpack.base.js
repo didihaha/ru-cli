@@ -10,7 +10,7 @@ module.exports = {
 		main: './public/ts/index.tsx'
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.json']
+		extensions: ['.ts', '.tsx', '.json', 'js']
 	},
 	module: {
 		rules: [

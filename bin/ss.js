@@ -31,6 +31,7 @@ requirer.prompt([
     }
 ]).then(locals => {
     const projectName = program.args.shift()
+    locals.projectName = projectName
     locals.startTime = (new Date()).toLocaleDateString() + ' ' +  (new Date()).toLocaleTimeString()
 
     // 选取的框架
