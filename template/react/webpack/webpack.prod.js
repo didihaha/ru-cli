@@ -6,7 +6,7 @@ const merge = require('webpack-merge'),
 const prod = {
     mode: 'production',
     output: {
-        publicPath: prodConfig.CDN_HOST,
+        publicPath: '/',
     },
     plugins: [
 		new webpack.DefinePlugin(prodConfig)

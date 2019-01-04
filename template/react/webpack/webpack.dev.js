@@ -1,5 +1,6 @@
 const merge = require('webpack-merge'),
 	webpack = require('webpack'),
+	devConfig = require('../config/dev'),
 	base = require('./webpack.base')
 
 const dev = {
@@ -35,7 +36,8 @@ const dev = {
 		namedModules: true
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin(devConfig)
 	]
 }
 

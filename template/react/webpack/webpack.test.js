@@ -1,15 +1,15 @@
 const merge = require('webpack-merge'),
 	webpack = require('webpack'),
-	devConfig = require('../config/dev'),
+	testConfig = require('../config/test'),
     pre = require('./webpack.pre')
 
 const test = {
     mode: 'development',
     output: {
-        publicPath: devConfig.CDN_HOST,
+        publicPath: '/',
     },
     plugins: [
-		new webpack.DefinePlugin(devConfig)
+		new webpack.DefinePlugin(testConfig)
     ]
 }
 
