@@ -1,6 +1,6 @@
 //入口文件
 
-import '../less/index.less'
+import './less/index.less'
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
 import { Provider } from 'react-redux'
