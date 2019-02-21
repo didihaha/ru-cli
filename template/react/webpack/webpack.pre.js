@@ -9,7 +9,7 @@ const merge = require('webpack-merge'),
 const pre = {
     output: {
 		path: outputPath,
-		filename: 'js/[name]-[contenthash:8].js'
+		filename: 'js/[name]_[contenthash:8].js'
     },
     module: {
 		rules: [
@@ -46,8 +46,8 @@ const pre = {
     },
     plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].[contenthash:6].css',
-            chunkFilename: 'css/[id].[contenthash:6].css'
+			filename: 'css/[name]_[contenthash:6].css',
+            chunkFilename: 'css/[id]_[contenthash:6].css'
         }),
         new WebpackParallelUglifyPlugin(
             {
