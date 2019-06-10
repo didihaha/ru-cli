@@ -13,7 +13,7 @@ program.version('1.0.0')
     .command('init', 'init project')
     .option('-r, --react', 'create react project', 'react')
     .option('-e, --express', 'create express project', 'express')
-    .option('-ro, --rollup', 'create rollup project', 'rollup')
+    .option('-u, --rollup', 'create rollup project', 'rollup')
     .option('-m, --multiple_pages', 'create multiple_pages project', 'multiple_pages')
     .parse(process.argv)
 
@@ -37,8 +37,8 @@ requirer.prompt([
 
     // 选取的框架
     let templateName
-    const { react, express, multiple_pages } = program,
-        inputParams = [react, express, multiple_pages].filter(item => !!item)
+    const { react, express, rollup } = program,
+        inputParams = [react, express, rollup].filter(item => !!item)
 
     if (inputParams.length > 1) {
         throw new Error('选取的项目模板参数不可多选')
