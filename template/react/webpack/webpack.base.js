@@ -23,7 +23,7 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(png|jpg|gif|ttf|eot|woff(2)?)(\?[=a-z0-9]+)?$/i,
+				test: /\.(png|jpe?g|gif|ttf|eot|woff(2)?)(\?[=a-z0-9]+)?$/i,
 				loader: 'url-loader',
 				options: {
 					limit: 10000, // 10KB
