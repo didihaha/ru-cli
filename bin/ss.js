@@ -28,7 +28,7 @@ requirer.prompt([
         type: 'input',
         name: 'author',
         message: 'who is the author for this project?',
-        default: 'mantis li'
+        default: ''
     }
 ]).then(locals => {
     const projectName = program.args.shift()

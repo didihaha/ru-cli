@@ -23,7 +23,7 @@ const dev = {
 	},
 	devServer: {
 		historyApiFallback: true,
-		host: 'localhost',
+		host: '0.0.0.0',
 		port: 8000,
 		hot: true,
 		open: true,
