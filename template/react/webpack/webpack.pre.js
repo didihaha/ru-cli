@@ -9,7 +9,8 @@ const merge = require('webpack-merge'),
 const pre = {
     output: {
 		path: outputPath,
-		filename: 'js/[name]_[contenthash:8].js'
+        filename: 'js/[name]_[contenthash:8].js',
+        publicPath: ''
     },
     module: {
 		rules: [

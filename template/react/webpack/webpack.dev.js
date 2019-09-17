@@ -16,7 +16,7 @@ const dev = {
 		rules: [
 			{
 				test: /\.(css|less)$/,
-				use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+				use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
                 exclude: /node_modules/
 			}
 		]
