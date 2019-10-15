@@ -14,6 +14,7 @@ module.exports = {
     },
     plugins: [
         new webpack.DllPlugin({
+            context: __dirname,
             path: path.join(__dirname, '../dll', '[name]_manifest.json'),
             name: '[name]_[hash]'
         })
