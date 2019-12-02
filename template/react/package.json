@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@babel/runtime-corejs2": "^7.0.0",
+    "@babel/runtime-corejs3": "^7.0.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "core-js": "3",
