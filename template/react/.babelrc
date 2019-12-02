@@ -3,7 +3,8 @@
 		["@babel/preset-env", {
 			"debug": false,
 			"modules": false,
-			"useBuiltIns": "entry"
+			"useBuiltIns": "entry",
+			"corejs": 3
 		}],
 		["@babel/preset-react", {
 			"pragma": "dom",

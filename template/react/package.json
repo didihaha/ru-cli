@@ -15,6 +15,7 @@
     "@babel/runtime-corejs2": "^7.0.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "core-js": "3",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.7",
