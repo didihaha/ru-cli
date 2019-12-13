@@ -7,7 +7,7 @@ const HappyPack = require('happypack'),
 
 module.exports = {
 	entry: {
-		main: './public/index.tsx'
+		main: './src/index.tsx'
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.json', '.js']
