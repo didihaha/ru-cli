@@ -7,13 +7,20 @@ const HappyPack = require('happypack'),
 
 module.exports = {
 	entry: {
-		main: './src/index.tsx'
+		main: ['core-js/modules/es.set', 'core-js/modules/es.map', 'core-js/modules/es.array.iterator', './src/index.tsx']
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.json', '.js']
 	},
 	module: {
 		rules: [
+			{
+				test: /\.jsx?$/,
+                use: [
+					{ loader: 'happypack/loader?id=babel' },
+				],
+				exclude: /node_modules/,
+			},
 			{
 				test: /\.tsx?$/,
                 use: [
