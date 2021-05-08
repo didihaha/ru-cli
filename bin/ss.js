@@ -33,11 +33,11 @@ requirer.prompt([
 ]).then(locals => {
     const projectName = program.args.shift()
     locals.projectName = projectName
-    locals.startTime = (new Date()).toLocaleDateString() + ' ' +  (new Date()).toLocaleTimeString()
+    locals.startTime = (new Date()).toLocaleDateString() + ' ' + (new Date()).toLocaleTimeString()
 
     // 选取的框架
     let templateName
-    const { react, express, rollup } = program,
+    const {react, express, rollup} = program,
         inputParams = [react, express, rollup].filter(item => !!item)
 
     if (inputParams.length > 1) {
@@ -70,6 +70,6 @@ requirer.prompt([
     copyTemplate(oldUrl, newUrl, locals)
 
     console.log(`*********     项目目录文件构建已完成      *********`)
-}).catch (err => {
+}).catch(err => {
     throw err
 })

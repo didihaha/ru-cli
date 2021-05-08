@@ -1,6 +1,6 @@
 const merge = require('webpack-merge'),
     path = require('path'),
-	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
+    MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin'),
     outputPath = path.resolve(__dirname, '../release'),
@@ -8,30 +8,30 @@ const merge = require('webpack-merge'),
 
 const pre = {
     output: {
-		path: outputPath,
+        path: outputPath,
         filename: 'js/[name]_[contenthash:8].js',
         publicPath: ''
     },
     module: {
-		rules: [
-			{
-				test: /\.(css|less)$/,
-				use: [{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '../'
-						}
-					}, 'css-loader', 'postcss-loader', 'less-loader'],
+        rules: [
+            {
+                test: /\.(css|less)$/,
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../'
+                    }
+                }, 'css-loader', 'postcss-loader', 'less-loader'],
                 exclude: /node_modules/
-			}
-		]
-	},
-	optimization: {
+            }
+        ]
+    },
+    optimization: {
         noEmitOnErrors: true,
         concatenateModules: true,
         splitChunks: {
             cacheGroups: {
-				// 提出公共js文件
+                // 提出公共js文件
                 commons: {
                     chunks: 'initial',
                     minChunks: 2,
@@ -41,13 +41,13 @@ const pre = {
                 }
             }
         },
-        runtimeChunk: { 
+        runtimeChunk: {
             name: 'runtime'
         }
     },
     plugins: [
-		new MiniCssExtractPlugin({
-			filename: 'css/[name]_[contenthash:6].css',
+        new MiniCssExtractPlugin({
+            filename: 'css/[name]_[contenthash:6].css',
             chunkFilename: 'css/[id]_[contenthash:6].css'
         }),
         new WebpackParallelUglifyPlugin(

@@ -1,6 +1,6 @@
 const merge = require('webpack-merge'),
-	webpack = require('webpack'),
-	prodConfig = require('../config/prod'),
+    webpack = require('webpack'),
+    prodConfig = require('../config/prod'),
     pre = require('./webpack.pre')
 
 const prod = {
@@ -9,7 +9,7 @@ const prod = {
         publicPath: '/',
     },
     plugins: [
-		new webpack.DefinePlugin(prodConfig)
+        new webpack.DefinePlugin(prodConfig)
     ]
 }
 

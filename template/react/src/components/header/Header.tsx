@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 class Header extends React.Component {
-    render () {
+    render() {
         return (
             <div className='header'>
                 头部

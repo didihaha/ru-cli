@@ -1,34 +1,46 @@
 {
-	"presets": [
-		["@babel/preset-env", {
-			"debug": false,
-			"modules": false,
-			"useBuiltIns": "entry",
-			"corejs": 3
-		}],
-		["@babel/preset-react", {
-			"pragma": "dom",
-			"pragmaFrag": "DomFrag"
-		}]
-	],
-	"plugins": [
-		"react-hot-loader/babel",
-		["@babel/plugin-transform-runtime",{
-			"corejs": 3
-		}],
-		"@babel/plugin-proposal-optional-chaining",
-		"@babel/plugin-proposal-export-default-from",
-		"@babel/plugin-proposal-object-rest-spread",
-		["@babel/plugin-proposal-decorators", {
-			"legacy": true
-		}],
-		"@babel/plugin-syntax-dynamic-import",
-		"@babel/plugin-transform-react-jsx",
-		[
-			"@babel/plugin-proposal-class-properties",
-			{
-				"spec": true
-			}
-		]
-	]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "debug": false,
+        "modules": false,
+        "useBuiltIns": "entry",
+        "corejs": 3
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "pragma": "dom",
+        "pragmaFrag": "DomFrag"
+      }
+    ]
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3
+      }
+    ],
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-react-jsx",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "spec": true
+      }
+    ]
+  ]
 }
