@@ -34,6 +34,7 @@ requirer.prompt([
     const projectName = program.args.shift()
     locals.projectName = projectName
     locals.startTime = (new Date()).toLocaleDateString() + ' ' + (new Date()).toLocaleTimeString()
+    locals.version = '1.0.0'
 
     // 选取的框架
     let templateName
