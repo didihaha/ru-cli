@@ -6,7 +6,7 @@ const fs = require('fs'),
     glob = require('glob'),
     requirer = require('inquirer'),
     copyTemplate = require('../lib/copyTemplate'),
-    type = ['react', 'express', 'multiple_pages']
+    type = ['react', 'express', 'multiple_pages', 'rollup']
 
 program.version('1.0.0')
     .usage('[options] [dir]')
