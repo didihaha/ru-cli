@@ -1,11 +1,11 @@
 {
-	"name": "wk-cli",
+	"name": "ru-cli",
 	"version": "1.0.0",
 	"description": "",
 	"author": "mantis li",
 	"license": "ISC",
 	"bin": {
-		"wk-cli": "./bin/wk.js"
+		"ru-cli": "./bin/ru.js"
 	},
 	"dependencies": {
 		"commander": "^2.12.2",
