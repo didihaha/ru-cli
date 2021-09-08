@@ -1,8 +1,9 @@
 const merge = require('webpack-merge'),
     webpack = require('webpack'),
     devConfig = require('../config/dev'),
-    base = require('./webpack.base')
-
+    base = require('./webpack.base'),
+    ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+    
 const dev = {
     mode: 'development',
     devtool: 'inline-source-map',
@@ -16,28 +17,21 @@ const dev = {
         rules: [
             {
                 test: /\.(css|less)$/,
-                use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
                 exclude: /node_modules/
             }
         ]
     },
     devServer: {
         historyApiFallback: true,
-        disableHostCheck: true,
         host: '0.0.0.0',
         port: 8000,
-        hot: true,
         open: true,
-        inline: true,
         compress: true,
-        progress: true,
         // watchContentBase: true
     },
-    optimization: {
-        namedModules: true
-    },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        new ReactRefreshWebpackPlugin(),
         new webpack.DefinePlugin(devConfig)
     ]
 }

@@ -1,9 +1,6 @@
-const HappyPack = require('happypack'),
-    path = require('path'),
-    webpack = require('webpack'),
-    AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    {CheckerPlugin} = require('awesome-typescript-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const isDev = process.env.NODE_ENV !== 'production'
 
 module.exports = {
     entry: {
@@ -15,17 +12,26 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
-                use: [
-                    {loader: 'happypack/loader?id=babel'},
-                ],
+                test: /\.js|jsx$/,
+                use: ['thread-loader', 'babel-loader'],
                 exclude: /node_modules/,
             },
             {
-                test: /\.tsx?$/,
+                test: /\.ts|tsx$/,
                 use: [
-                    {loader: 'happypack/loader?id=babel'},
-                    {loader: 'awesome-typescript-loader'}
+                    'thread-loader',
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean)
+                        }
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            happyPackMode: true,
+                        }
+                    }
                 ],
                 exclude: /node_modules/,
             },
@@ -43,28 +49,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new CheckerPlugin(),
-        new webpack.DllReferencePlugin({
-            context: path.join(__dirname, '../dll/'),
-            manifest: require(path.join(__dirname, '../dll', 'polyfill_manifest.json')),
-        }),
-        new webpack.DllReferencePlugin({
-            context: path.join(__dirname, '../dll/'),
-            manifest: require(path.join(__dirname, '../dll', 'vendor_manifest.json')),
-        }),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            inject: true
-        }),
-        new AddAssetHtmlPlugin([
-            {filepath: require.resolve('../dll/dll_polyfill_56b2f803.js')},
-            {filepath: require.resolve('../dll/dll_vendor_56b2f803.js')}
-        ]),
-        new HappyPack({
-            id: 'babel',
-            threads: 4,
-            loaders: ['babel-loader']
+            "filename": "index.html",
+            "template": "index.html",
+            "inject": true
         })
+        
     ]
 };

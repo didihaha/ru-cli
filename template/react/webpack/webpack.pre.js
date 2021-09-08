@@ -2,7 +2,6 @@ const merge = require('webpack-merge'),
     path = require('path'),
     MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
-    WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin'),
     outputPath = path.resolve(__dirname, '../release'),
     base = require('./webpack.base')
 
@@ -50,23 +49,7 @@ const pre = {
             filename: 'css/[name]_[contenthash:6].css',
             chunkFilename: 'css/[id]_[contenthash:6].css'
         }),
-        new WebpackParallelUglifyPlugin(
-            {
-                uglifyJS: {
-                    mangle: false,
-                    output: {
-                        beautify: false,
-                        comments: false
-                    },
-                    compress: {
-                        drop_console: true,
-                        collapse_vars: true,
-                        reduce_vars: true
-                    },
-                    warnings: false,
-                }
-            }
-        ),
+        
         new CleanWebpackPlugin(
             // 需要删除的文件夹
             [outputPath + '/*'],
