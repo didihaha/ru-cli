@@ -1,11 +1,11 @@
-import json from 'rollup-plugin-json'
-import babel from 'rollup-plugin-babel'
-import replace from 'rollup-plugin-replace'
-import resolve from 'rollup-plugin-node-resolve'
+import json from '@rollup/plugin-json'
+import babel from '@rollup/plugin-babel'
+import replace from '@rollup/plugin-replace'
+import resolve from '@rollup/plugin-node-resolve'
 import rollupTypescript from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
-import addCssImport from './addCssImport'
-import createPackage from './createPackage'
+import addCssImport from '../plugins/addCssImport'
+import createPackage from '../plugins/createPackage'
 import cssnext from 'postcss-cssnext';
 import cssnano from 'cssnano';
 import del from 'rollup-plugin-delete'
@@ -45,7 +45,8 @@ function getBaseConfig(type, envConfig) {
             resolve(),
             json(),
             replace({
-                'process.env': envConfig
+                'process.env': envConfig,
+                preventAssignment: true
             }),
             babel({
                 exclude: 'node_modules/**'
@@ -108,7 +109,7 @@ function init(envConfig) {
 
     // 第一个配置添加删除文件夹插件
     res[0].plugins.unshift(del({ targets: 'release/*' }))
-    // 最后一个配置添加创建package.json文件的插件
+    // 最后一个配置添加同步package.json文件的插件
     res[res.length - 1].plugins.push(createPackage())
 
     return res
