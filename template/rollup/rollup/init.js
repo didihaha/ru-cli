@@ -4,11 +4,13 @@ import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
 import rollupTypescript from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
-import addCssImport from '../plugins/addCssImport'
-import createPackage from '../plugins/createPackage'
+import commonjs from '@rollup/plugin-commonjs'
+import del from 'rollup-plugin-delete'
 import cssnext from 'postcss-cssnext';
 import cssnano from 'cssnano';
-import del from 'rollup-plugin-delete'
+import addCssImport from '../plugins/addCssImport'
+import createPackage from '../plugins/createPackage'
+import replaceEntryTsxToJs from '../plugins/replaceEntryTsxToJs'
 const fs = require('fs')
 
 /**
@@ -21,6 +23,10 @@ function getBaseConfig(type, envConfig) {
         external: ['react'],
         plugins: [
             addCssImport(),
+            commonjs({
+                include: 'node_modules/**',  // Default: undefined
+                sourceMap: false,  // Default: true
+            }),
             rollupTypescript({
                 useTsconfigDeclarationDir: true,
                 tsconfigOverride: {
@@ -49,7 +55,8 @@ function getBaseConfig(type, envConfig) {
                 preventAssignment: true
             }),
             babel({
-                exclude: 'node_modules/**'
+                exclude: 'node_modules/**', // 排除引入的库
+                babelHelpers: 'runtime' // 配置runtime，不设置会报错
             }),
         ]
     }
@@ -111,6 +118,9 @@ function init(envConfig) {
     res[0].plugins.unshift(del({ targets: 'release/*' }))
     // 最后一个配置添加同步package.json文件的插件
     res[res.length - 1].plugins.push(createPackage())
+    // 再添加移动入口文件插件
+    res[res.length - 2].plugins.push(replaceEntryTsxToJs())
+    res[res.length - 1].plugins.push(replaceEntryTsxToJs())
 
     return res
 }
