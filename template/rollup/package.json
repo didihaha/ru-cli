@@ -9,7 +9,7 @@
     "build:test": "rollup --config ./rollup/rollup.test.js && ncp ./src/index.tsx ./release/es/index.js && ncp ./src/index.tsx ./release/lib/index.js"
   },
   "keywords": [],
-  "main": "./dist/index.js",
+  "main": "./es/index.js",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.5",
