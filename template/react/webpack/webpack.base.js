@@ -1,4 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin'),
+    webpack = require('webpack'),
+    path = require('path'),
+    AddAssetHtmlPlugin = require("add-asset-html-webpack-plugin")
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -49,11 +52,18 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require(path.join(__dirname, "../dll", "vendor_manifest.json")),
+            sourceType: "var",
+        }),
         new HtmlWebpackPlugin({
             "filename": "index.html",
             "template": "index.html",
             "inject": true
-        })
-        
+        }),
+        new AddAssetHtmlPlugin([
+            { filepath: require.resolve('../dll/dll_vendor_f865f399.js') }
+        ]),
     ]
 };
