@@ -1,5 +1,6 @@
 const merge = require('webpack-merge'),
     path = require('path'),
+    webpack = require('webpack'),
     MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     outputPath = path.resolve(__dirname, '../release'),
@@ -45,11 +46,15 @@ const pre = {
         }
     },
     plugins: [
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require(path.join(__dirname, "../dll", "vendor_manifest.json")),
+            sourceType: "var",
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name]_[contenthash:6].css',
             chunkFilename: 'css/[id]_[contenthash:6].css'
         }),
-        
         new CleanWebpackPlugin(
             // 需要删除的文件夹
             [outputPath + '/*'],

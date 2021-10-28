@@ -13,7 +13,9 @@
       "@babel/preset-react",
       {
         "pragma": "dom",
-        "pragmaFrag": "DomFrag"
+        "pragmaFrag": "DomFrag",
+        "runtime": "automatic"
+
       }
     ]
   ],
